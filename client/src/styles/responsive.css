@@ -1,0 +1,481 @@
+/* Responsive Design and Mobile Optimizations */
+
+/* Responsive Breakpoints */
+@media (max-width: 1199.98px) {
+  /* Large devices (desktops, less than 1200px) */
+  .container-xl {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  /* Medium devices (tablets, less than 992px) */
+  .container-lg {
+    max-width: 720px;
+  }
+  
+  /* Hide sidebar on tablet */
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1050;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .sidebar-open {
+    transform: translateX(0);
+  }
+  
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+  
+  /* Adjust main content */
+  .main-content {
+    margin-left: 0;
+    padding: var(--spacing-md);
+  }
+  
+  /* Stack dashboard stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Simplify ticket cards */
+  .ticket-card {
+    padding: var(--spacing-md);
+  }
+  
+  .ticket-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Small devices (landscape phones, less than 768px) */
+  .container-md {
+    max-width: 540px;
+  }
+  
+  /* Header adjustments */
+  .header-container {
+    padding: 0 var(--spacing-md);
+    height: 56px;
+  }
+  
+  .logo h1 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .main-nav {
+    display: none;
+  }
+  
+  /* Single column stats */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+  
+  .stat-value {
+    font-size: var(--font-size-2xl);
+  }
+  
+  /* Form adjustments */
+  .form-row.two-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .filters-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .search-input,
+  .filter-select {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Button adjustments */
+  .btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-base);
+  }
+  
+  .btn-sm {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+  
+  /* Modal adjustments */
+  .modal-content {
+    margin: var(--spacing-md);
+    max-height: calc(100vh - 2rem);
+  }
+  
+  /* Ticket details responsive */
+  .ticket-details-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .ticket-main,
+  .ticket-sidebar {
+    padding: var(--spacing-md);
+  }
+  
+  /* Comment section mobile */
+  .comment-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .comment-form-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Extra small devices (portrait phones, less than 576px) */
+  .container-sm {
+    max-width: none;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* Typography adjustments */
+  h1 { font-size: var(--font-size-2xl); }
+  h2 { font-size: var(--font-size-xl); }
+  h3 { font-size: var(--font-size-lg); }
+  
+  /* Page padding */
+  .dashboard,
+  .ticket-list-page,
+  .new-ticket-page,
+  .ticket-details-page {
+    padding: var(--spacing-sm);
+  }
+  
+  /* Header mobile */
+  .page-header,
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    text-align: left;
+  }
+  
+  .header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .header-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Card layouts */
+  .ticket-card {
+    padding: var(--spacing-md);
+  }
+  
+  .ticket-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .ticket-badges {
+    align-self: flex-end;
+  }
+  
+  .ticket-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-md);
+  }
+  
+  .ticket-actions {
+    flex-direction: column;
+  }
+  
+  .ticket-actions .btn {
+    width: 100%;
+  }
+  
+  /* Form mobile */
+  .form-container {
+    padding: var(--spacing-md);
+  }
+  
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: var(--spacing-sm);
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+  }
+  
+  /* Pagination mobile */
+  .pagination {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+  
+  .pagination-btn {
+    min-width: 44px; /* Touch target size */
+    min-height: 44px;
+  }
+  
+  /* User menu mobile */
+  .user-dropdown {
+    position: fixed;
+    top: 60px;
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
+    width: auto;
+  }
+  
+  /* Timeline mobile */
+  .timeline-item {
+    padding-left: 0;
+  }
+  
+  .timeline-icon {
+    position: static;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .timeline-connector {
+    display: none;
+  }
+  
+  /* Comment section mobile */
+  .comment-input-container {
+    flex-direction: column;
+  }
+  
+  .comment-avatar {
+    align-self: flex-start;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  /* SLA status mobile */
+  .sla-status {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+}
+
+/* Landscape phone adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .auth-container {
+    padding: var(--spacing-sm);
+  }
+  
+  .auth-card {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .modal-content {
+    max-height: 90vh;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .user-avatar,
+  .stat-icon {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .sidebar {
+    transition: none;
+  }
+  
+  .modal-content {
+    animation: none;
+  }
+  
+  .spinner-circle {
+    animation: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .btn-outline {
+    border-width: 2px;
+  }
+  
+  .form-control:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    box-shadow: 0 0 0 3px;
+  }
+  
+  .badge {
+    border: 1px solid;
+  }
+}
+
+/* Dark mode preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light-color: #1a1a1a;
+    --dark-color: #ffffff;
+    --secondary-color: #a0a0a0;
+  }
+  
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .auth-container {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  }
+  
+  .ticket-card,
+  .stat-card,
+  .dashboard-section,
+  .modal-content,
+  .form-container {
+    background-color: #1e1e1e;
+    border-color: #333;
+  }
+  
+  .form-control,
+  input,
+  textarea,
+  select {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #ffffff;
+  }
+  
+  .btn-outline {
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .sidebar,
+  .sidebar-overlay,
+  .btn,
+  .form-actions,
+  .pagination,
+  .modal-overlay {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .ticket-card,
+  .dashboard-section {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .page-header h1 {
+    font-size: 18pt;
+  }
+  
+  .ticket-title {
+    font-size: 14pt;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  .badge {
+    border: 1px solid #000;
+    color: #000 !important;
+    background: transparent !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn,
+  .pagination-btn,
+  .dropdown-item,
+  .nav-link {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .user-menu {
+    min-height: 44px;
+  }
+  
+  .ticket-card:hover {
+    transform: none;
+  }
+  
+  .stat-card:hover {
+    transform: none;
+  }
+}
+
+/* Focus management for keyboard navigation */
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover,
+  .ticket-card:hover,
+  .stat-card:hover,
+  .action-card:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Container queries (future-proofing) */
+@container (max-width: 600px) {
+  .filters-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .ticket-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}

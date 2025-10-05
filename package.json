@@ -1,0 +1,19 @@
+{
+  "name": "helpdesk-mini",
+  "version": "1.0.0",
+  "description": "HelpDesk Mini System with SLA Management",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "author": "Shashank Shekhar",
+  "license": "MIT"
+}
